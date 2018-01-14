@@ -17,7 +17,7 @@ A very simple infinite loader react component.
 #### With children:
 ```
 render() {
-    const { totalPages, page } = this.state;
+    const { totalPages } = this.state;
     return (
       <Pagination numberOfPages={totalPages} 
                   isLoading={this.state.isLoading}
@@ -33,6 +33,7 @@ render() {
 #### Without children:
 ```
 render() {
+ const { totalPages } = this.state;
  return (<div>
            { this.reenderPages() }
            <Pagination numberOfPages={totalPages} 
