@@ -6,32 +6,32 @@ A very simple infinite loader react component.
 With children:
 
 ```
-<Pagination numberOfPages={totalPages} 
-            isLoading={this.state.isLoading}
-            startPage={0}
-            loadMore={this.fetchMoreData}>
-  {
-     this.reenderPages()
+render() {
+    const { totalPages, page } = this.state;
+    return (
+      <Pagination numberOfPages={totalPages} 
+                  isLoading={this.state.isLoading}
+                  startPage={0}
+                  loadMore={this.fetchMoreData}>
+          {
+            this.reenderPages()
+          }
+      </Pagination>
+    );
   }
-</Pagination>
 ```
 Without children:
 
 ```
-<div style={
-        {
-          width: '50%',
-          margin: '0 auto'
-        }
-        }>
-        {
-             this.reenderPages()
-        }
-        <Pagination numberOfPages={totalPages} 
+render() {
+ return (<div>
+           { this.reenderPages() }
+           <Pagination numberOfPages={totalPages} 
                     isLoading={this.state.isLoading}
                     startPage={0}
                     loadMore={this.fetchMoreData}/>
-      </div>
+         </div>);
+}
 ```
 
 
