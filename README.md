@@ -14,7 +14,7 @@ A very simple infinite loader react component.
 
 ### Examples:
 
-### With children:
+#### With children:
 ```
 render() {
     const { totalPages, page } = this.state;
@@ -30,6 +30,7 @@ render() {
     );
   }
 ```
+#### Without children:
 ```
 render() {
  return (<div>
