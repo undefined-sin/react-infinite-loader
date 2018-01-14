@@ -14,6 +14,8 @@ export default class Pagination extends Component {
     static propTypes = {
         children:  PropTypes.node,
         loader: PropTypes.node,
+        loadMore: PropTypes.func.isRequired,
+        isLoading: PropTypes.bool.isRequired,
         numberOfPages: PropTypes.number.isRequired,
         thresholdPercent: PropTypes.number.isRequired,
         startPage: PropTypes.number.isRequired
@@ -21,10 +23,11 @@ export default class Pagination extends Component {
    
 
     static defaultProps = {
-        thresholdPercent: 0.9,
-        startPage: -1,
+        isLoading:false,
         loader: <div>Loading...</div>,
-        numberOfPages: 0
+        numberOfPages: 0,
+        startPage: -1,
+        thresholdPercent: 0.9
     };
 
     constructor(props){
